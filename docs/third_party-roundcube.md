@@ -100,6 +100,12 @@ $config['password_algorithm_prefix'] = '{SSHA256}';
 $config['password_query'] = "UPDATE mailbox SET password = %P WHERE username = %u";
 ```
 
+Roundcube may create the password config file by default at `data/web/rc/plugins/password/config.inc.php.dist`, causing password changes to fail. Either create the correct file manually or run the following command:
+
+```
+mv data/web/rc/plugins/password/config.inc.php.dist data/web/rc/plugins/password/config.inc.php
+```
+
 ### Integrate CardDAV addressbooks in Roundcube
 
 Download the latest release of [RCMCardDAV](https://github.com/blind-coder/rcmcarddav/) to the Roundcube plugin directory and extract it (here `rc/plugins`):
